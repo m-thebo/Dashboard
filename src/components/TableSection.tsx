@@ -3,8 +3,8 @@ import { Star } from "lucide-react"
 const firms = [
   {
     name: "URFX",
-    logo: "N",
-    logoColor: "bg-white text-black",
+    logo: "/URFX.png",
+    logoType: "image",
     rating: 2.5,
     profitSplit: "88%",
     accountSize: "$75K",
@@ -13,8 +13,8 @@ const firms = [
   },
   {
     name: "Quant Tekel",
-    logo: "QT",
-    logoColor: "bg-teal-500 text-white",
+    logo: "/Quant Tekel.png",
+    logoType: "image",
     rating: 3.8,
     profitSplit: "76%",
     accountSize: "$150K",
@@ -23,8 +23,8 @@ const firms = [
   },
   {
     name: "Funded Trading Plus",
-    logo: "🏛️",
-    logoColor: "bg-white text-black",
+    logo: "/FundedTradingPlus.png",
+    logoType: "image",
     rating: 5.1,
     profitSplit: "82%",
     accountSize: "$250K",
@@ -33,8 +33,8 @@ const firms = [
   },
   {
     name: "Seacrest Funded",
-    logo: "$",
-    logoColor: "bg-slate-700 text-white border border-slate-600",
+    logo: "/Seacrest.png",
+    logoType: "image",
     rating: 1.9,
     profitSplit: "91%",
     accountSize: "$300K",
@@ -43,8 +43,8 @@ const firms = [
   },
   {
     name: "City Traders Imperium",
-    logo: "📈",
-    logoColor: "bg-slate-700 text-white border border-slate-600",
+    logo: "/CityTraders.png",
+    logoType: "image",
     rating: 4.0,
     profitSplit: "79%",
     accountSize: "$225K",
@@ -53,8 +53,8 @@ const firms = [
   },
   {
     name: "Audacity Capital",
-    logo: "🎯",
-    logoColor: "bg-slate-700 text-white border border-slate-600",
+    logo: "/Audacity.png",
+    logoType: "image",
     rating: 3.3,
     profitSplit: "85%",
     accountSize: "$100K",
@@ -63,8 +63,8 @@ const firms = [
   },
   {
     name: "Lark Funding",
-    logo: "💎",
-    logoColor: "bg-slate-700 text-yellow-400 border border-slate-600",
+    logo: "/LarkFunding.png",
+    logoType: "image",
     rating: 2.1,
     profitSplit: "94%",
     accountSize: "$50K",
@@ -73,8 +73,8 @@ const firms = [
   },
   {
     name: "The 5ers",
-    logo: "5",
-    logoColor: "bg-blue-600 text-white",
+    logo: "/The5ers.png",
+    logoType: "image",
     rating: 4.9,
     profitSplit: "77%",
     accountSize: "$175K",
@@ -88,7 +88,7 @@ export default function TableSection() {
     <div
       className="relative p-2 rounded-lg max-w-full w-full mx-auto -mt-8 -mb-0.1 overflow-hidden"
       style={{
-        background: 'rgba(255,255,255,0.04)',
+        background: 'linear-gradient(90deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.05) 100%)',
         border: '1.5px solid rgba(255,255,255,0.2)',
         boxShadow: '0 4px 16px 0 rgba(0,0,0,0.10), 0 1px 4px 0 rgba(255,255,255,0.04)',
         backdropFilter: 'blur(16px)',
@@ -96,7 +96,7 @@ export default function TableSection() {
         opacity: 0.9,
       }}
     >
-      {/* Blue glass effect background */}
+      {/* Blue gradient background */}
       <div
         style={{
           position: 'absolute',
@@ -104,13 +104,15 @@ export default function TableSection() {
           left: '50%',
           width: '1693.2px',
           height: '462.05px',
-          transform: 'translate(-50%, -50%) rotate(-30deg)',
+          transform: 'translate(-50%, -50%) rotate(-26.49deg)',
           zIndex: 0,
           pointerEvents: 'none',
-          opacity: 0.25,
+          opacity: 0.3,
           background: `
-            linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 40%, #017AFF 70%, #004AAC 100%),
-            //linear-gradient(90deg, #017AFF 0%, #004AAC 100%)
+            linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%),
+            linear-gradient(90deg, #017AFF 0%, #004AAC 100%),
+            linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%)
+
           `,
           filter: 'blur(30px)',
         }}
@@ -119,7 +121,7 @@ export default function TableSection() {
         <table className="w-full text-xs">
           <thead>
             <tr className="border-b border-slate-700">
-              <th className="text-left px-1 py-1 text-slate-400 font-medium text-xs">FIRM ↕</th>
+              <th className="text-left px-4 py-4 text-slate-400 font-medium text-xs">FIRM ↕</th>
               <th className="text-left px-4 py-4 text-slate-400 font-medium text-sm">RATING ↕</th>
               <th className="text-left px-4 py-4 text-slate-400 font-medium text-sm">PROFIT SPLIT ↕</th>
               <th className="text-left px-4 py-4 text-slate-400 font-medium text-sm">ACCOUNT SIZE ↕</th>
@@ -135,31 +137,33 @@ export default function TableSection() {
               >
                 <td className="py-4 px-4">
                   <div className="flex items-center gap-3">
-                    <div
-                      className={`w-8 h-8 rounded-lg flex items-center justify-center font-black text-xs ${firm.logoColor}`}
-                    >
-                      {firm.logo}
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                      <img 
+                        src={firm.logo} 
+                        alt={`${firm.name} logo`}
+                        className="w-7 h-7 object-contain"
+                      />
                     </div>
-                    <span className="text-white font-medium">{firm.name}</span>
+                    <span className="text-white opacity-90">{firm.name}</span>
                   </div>
                 </td>
                 <td className="py-4 px-4">
                   <div className="flex items-center gap-1">
-                    <Star className="w-4 h-4 fill-yellow-400 text-yellow-400 drop-shadow-lg" />
-                    <span className="text-white font-medium">{firm.rating}</span>
+                    <Star className="w-4 h-4 fill-yellow-400 text-yellow-400 drop-shadow-lg opacity-90" />
+                    <span className="text-white opacity-90">{firm.rating}</span>
                   </div>
                 </td>
                 <td className="py-4 px-4">
-                  <span className="text-white font-medium">{firm.profitSplit}</span>
+                  <span className="text-white opacity-90">{firm.profitSplit}</span>
                 </td>
                 <td className="py-4 px-4">
-                  <span className="text-white font-medium">{firm.accountSize}</span>
+                  <span className="text-white opacity-90">{firm.accountSize}</span>
                 </td>
                 <td className="py-4 px-4">
-                  <span className="text-white font-medium">{firm.maxDrawdown}</span>
+                  <span className="text-white opacity-90">{firm.maxDrawdown}</span>
                 </td>
                 <td className="py-4 px-4">
-                  <span className="text-white font-medium">{firm.price}</span>
+                  <span className="text-white opacity-90">{firm.price}</span>
                 </td>
               </tr>
             ))}

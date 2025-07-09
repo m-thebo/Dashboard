@@ -4,7 +4,7 @@ import TableSection from "../components/TableSection";
 
 export default function App() {
   return (
-    <div className="min-h-screen h-full text-white relative overflow-hidden px-12 pb-32" style={{ fontFamily: 'Intel, sans-serif' }}>
+    <div className="min-h-screen h-full text-white relative overflow-hidden px-[100px] py-[60px] pb-32" style={{ fontFamily: 'Poppins' }}>
       <CardSection />
       <SearchSection />
       <TableSection />
