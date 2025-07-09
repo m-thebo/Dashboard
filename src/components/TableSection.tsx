@@ -86,7 +86,7 @@ const firms = [
 export default function TableSection() {
   return (
     <div
-      className="relative p-2 rounded-lg max-w-full w-full mx-auto -mt-8 -mb-0.1 overflow-hidden"
+      className="relative p-2 rounded-3xl max-w-7xl w-full mx-auto -mt-8 -mb-0.1 overflow-hidden"
       style={{
         background: 'linear-gradient(90deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.05) 100%)',
         border: '1.5px solid rgba(255,255,255,0.2)',

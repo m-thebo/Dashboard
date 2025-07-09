@@ -9,7 +9,7 @@ const CardSection = () => (
       </div>
     </div>
     {/* Featured Firms Cards */}
-    <div className="max-w-7xl mx-auto flex justify-between items-start gap-4 mt-12">
+    <div className="max-w-7xl mx-auto flex justify-between items-start gap-6 mt-12">
       <FeaturedCard1 />
       <FeaturedCard2 />
       <FeaturedCard3 />
@@ -100,7 +100,7 @@ const FeaturedCard1 = () => (
         `,
         border: '1px solid rgba(255,255,255,0.2)',
         backdropFilter: 'blur(18px)',
-        boxShadow: '0 12px 48px 0 rgba(198,192,200,0.25), 0 2px 12px 0 rgba(255,255,255,0.12)',
+        boxShadow: '0 20px 80px 0 rgba(198,192,200,0.4), 0 8px 32px 0 rgba(198,192,200,0.2), 0 4px 16px 0 rgba(255,255,255,0.15)',
         width: '360px',
         minHeight: '260px',
       }}
@@ -161,7 +161,7 @@ const FeaturedCard1 = () => (
 );
 
 const FeaturedCard2 = () => (
-  <div className="w-[370px] min-h-[280px]" style={{ transform: 'translate(10px, -14px)' }}>
+  <div className="w-[420px] min-h-[280px]" style={{ transform: 'translate(0px, -12px)' }}>
     <div
       className="relative rounded-2xl shadow-2xl overflow-hidden border"
       style={{
@@ -177,8 +177,8 @@ const FeaturedCard2 = () => (
         `,
         border: '1px solid rgba(255,255,255,0.2)',
         backdropFilter: 'blur(18px)',
-        boxShadow: '0 12px 48px 0 rgba(226,170,0,0.25), 0 2px 12px 0 rgba(255,255,255,0.12)',
-        width: '370px',
+        boxShadow: '0 20px 80px 0 rgba(226,170,0,0.4), 0 8px 32px 0 rgba(226,170,0,0.2), 0 4px 16px 0 rgba(255,255,255,0.15)',
+        width: '420px',
         minHeight: '280px',
       }}
     >
@@ -238,7 +238,7 @@ const FeaturedCard2 = () => (
 );
 
 const FeaturedCard3 = () => (
-  <div className="w-[360px] min-h-[260px] ml-auto">
+  <div className="w-[360px] min-h-[260px]">
     <div
       className="relative rounded-2xl shadow-2xl overflow-hidden border"
       style={{
@@ -254,7 +254,7 @@ const FeaturedCard3 = () => (
         `,
         border: '1px solid rgba(255,255,255,0.2)',
         backdropFilter: 'blur(18px)',
-        boxShadow: '0 12px 48px 0 rgba(150,92,42,0.25), 0 2px 12px 0 rgba(255,255,255,0.12)',
+        boxShadow: '0 20px 80px 0 rgba(150,92,42,0.4), 0 8px 32px 0 rgba(150,92,42,0.2), 0 4px 16px 0 rgba(255,255,255,0.15)',
         width: '360px',
         minHeight: '260px',
       }}

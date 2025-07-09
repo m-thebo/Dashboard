@@ -18,83 +18,84 @@ const SearchSection = () => (
           <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white w-5 h-5 z-10" />
           <Input
             placeholder="Search Firms" 
-            className="pl-12 pr-4 py-5 w-80 text-gray-900 placeholder:text-gray-400 shadow-xl font-medium backdrop-blur-xl"
+            className="pl-12 pr-4 py-5 w-80 text-white placeholder:text-gray-300 shadow-xl font-medium backdrop-blur-xl"
             style={{
               borderRadius: '10px',
-              background: 'linear-gradient(360deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.08) 100%)',
-              border: '1.5px solid rgba(255,255,255,0.2)',
-              WebkitBackdropFilter: 'blur(16px)',
-              backdropFilter: 'blur(16px)',
-              opacity: 0.7,
+              background: 'linear-gradient(360deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.12) 100%)',
+              border: '1.5px solid rgba(255,255,255,0.25)',
+              WebkitBackdropFilter: 'blur(20px)',
+              backdropFilter: 'blur(20px)',
+              boxShadow: '0 8px 32px 0 rgba(0,0,0,0.37), inset 0 1px 0 0 rgba(255,255,255,0.15)',
             }}
           />
         </div>
         <Button
           variant="outline"
           size="icon"
-          className="py-5 px-5 shadow-xl transition-all duration-300 text-white"
+          className="py-5 px-5 shadow-xl transition-all duration-300 text-white hover:text-gray-300"
           style={{
             borderRadius: '10px',
-            background: 'linear-gradient(360deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.08) 100%)',
-            border: '1.5px solid rgba(255,255,255,0.2)',
-            WebkitBackdropFilter: 'blur(16px)',
-            backdropFilter: 'blur(16px)',
-            opacity: 0.7,
+            background: 'linear-gradient(360deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.12) 100%)',
+            border: '1.5px solid rgba(255,255,255,0.25)',
+            WebkitBackdropFilter: 'blur(20px)',
+            backdropFilter: 'blur(20px)',
+            boxShadow: '0 8px 32px 0 rgba(0,0,0,0.37), inset 0 1px 0 0 rgba(255,255,255,0.15)',
           }}
         >
-          <Filter className="w-5 h-5" />
+          <Filter className="w-5 h-5 hover:text-gray-100" />
         </Button>
-        {/* Toggle group for Grid and List */}
+        {/* Toggle Switch for Grid and List */}
         {(() => {
           const [active, setActive] = useState<'grid' | 'list'>('grid');
           return (
             <div
-              className="flex rounded-[10px] backdrop-blur-xl"
+              className="relative flex rounded-[10px] backdrop-blur-xl p-1"
               style={{
-                boxShadow: '0 2px 8px 0 rgba(0,0,0,0.08)',
+                boxShadow: '0 8px 32px 0 rgba(0,0,0,0.37), inset 0 1px 0 0 rgba(255,255,255,0.15)',
                 borderRadius: '10px',
-                background: 'transparent',
-                WebkitBackdropFilter: 'blur(16px)',
-                backdropFilter: 'blur(16px)',
-                opacity: 0.7,
+                background: 'linear-gradient(360deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.12) 100%)',
+                border: '1.5px solid rgba(255,255,255,0.25)',
+                WebkitBackdropFilter: 'blur(20px)',
+                backdropFilter: 'blur(20px)',
+                width: '100px',
+                height: '48px',
               }}
             >
-              <Button
-                variant="outline"
-                size="icon"
-                className={`py-5 px-6 text-white rounded-l-[18px] rounded-r-none border-none focus:shadow-none ${active === 'grid' ? '' : 'bg-transparent'}`}
-                style={
-                  active === 'grid'
-                    ? {
-                        background: 'linear-gradient(360deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.08) 100%)',
-                        border: '1.5px solid rgba(255,255,255,0.2)',
-                        WebkitBackdropFilter: 'blur(16px)',
-                        backdropFilter: 'blur(16px)',
-                      }
-                    : { background: 'transparent', border: 'none' }
-                }
+              {/* Sliding indicator */}
+              <div
+                className="absolute top-1 bottom-1 rounded-[8px] transition-all duration-300 ease-out"
+                style={{
+                  width: '46px',
+                  background: 'linear-gradient(360deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.3) 100%)',
+                  border: '1px solid rgba(255,255,255,0.4)',
+                  boxShadow: '0 4px 16px 0 rgba(0,0,0,0.3), inset 0 1px 0 0 rgba(255,255,255,0.3)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  backdropFilter: 'blur(20px)',
+                  transform: active === 'grid' ? 'translateX(0px)' : 'translateX(46px)',
+                }}
+              />
+              
+              {/* Grid button */}
+              <button
+                className="relative z-10 flex items-center justify-center w-12 h-full text-white transition-all duration-200 focus:outline-none"
+                style={{
+                  opacity: active === 'grid' ? 1 : 0.6,
+                }}
                 onClick={() => setActive('grid')}
               >
-                <Grid3X3 className="w-5 h-5" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className={`py-5 px-6 text-white rounded-r-[18px] rounded-l-none border-none focus:shadow-none ${active === 'list' ? '' : 'bg-transparent'}`}
-                style={
-                  active === 'list'
-                    ? {
-                        background: 'linear-gradient(360deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.08) 100%)',
-                        border: '1.5px solid rgba(255,255,255,0.2)',
-                        WebkitBackdropFilter: 'blur(16px)',
-                        backdropFilter: 'blur(16px)',
-                      }
-                    : { background: 'transparent', border: 'none' }
-                }
+                <Grid3X3 className="w-4 h-4" />
+              </button>
+              
+              {/* List button */}
+              <button
+                className="relative z-10 flex items-center justify-center w-12 h-full text-white transition-all duration-200 focus:outline-none"
+                style={{
+                  opacity: active === 'list' ? 1 : 0.6,
+                }}
                 onClick={() => setActive('list')}
               >
-                <List className="w-5 h-5" />
-              </Button>
+                <List className="w-4 h-4" />
+              </button>
             </div>
           );
         })()}
