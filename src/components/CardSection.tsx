@@ -1,10 +1,10 @@
 const CardSection = () => (
   <section className="px-0 py-20">
-    <div className="max-w-7xl mx-auto flex items-stretch gap-8">
-      <div className="flex-1 flex flex-col justify-center -mt-21">
+    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-stretch gap-8">
+      <div className="flex-1 flex flex-col justify-center items-center md:items-start md:-mt-21">
         <HeroHeading />
       </div>
-      <div className="flex-1 flex items-center justify-end" style={{ transform: 'translate(-10px, -25px)' }}>
+      <div className="flex-1 flex items-center justify-center md:justify-end md:translate-x-[-10px] md:translate-y-[-25px]">
         <AIRecommendationCard />
       </div>
     </div>
@@ -22,10 +22,10 @@ export default CardSection;
 
 const HeroHeading = () => (
   <>
-    <h1 className="text-3xl font-semibold leading-tight mb-4 text-left">
+    <h1 className="text-3xl font-semibold leading-tight mb-4 text-center md:text-left">
       Find Your Perfect Prop Trading Firm Today
     </h1>
-    <p className="text-gray-300 text-base leading-relaxed max-w-xl font-medium text-left" style={{ opacity: 0.7 }}>
+    <p className="text-gray-300 text-base leading-relaxed max-w-xl font-medium text-center md:text-left" style={{ opacity: 0.7 }}>
       Compare the world's leading proprietary trading firms. Discover the best profit splits, account sizes, and trading conditions tailored to your trading style.
     </p>
   </>
