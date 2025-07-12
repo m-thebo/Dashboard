@@ -257,69 +257,88 @@ export default function TableSection() {
   })
 
   return (
-    <div className="px-4 p-2 max-w-7xl w-full mx-auto -mt-8 -mb-0.1">
-      <Table
-        className="relative rounded-3xl w-full overflow-hidden"
+    <div
+      className="relative px-4 p-2 rounded-3xl max-w-7xl w-full mx-auto -mt-8 -mb-0.1 overflow-hidden"
+      style={{
+        background: 'linear-gradient(90deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.05) 100%)',
+        border: '1.5px solid rgba(255,255,255,0.2)',
+        boxShadow: '0 4px 16px 0 rgba(0,0,0,0.10), 0 1px 4px 0 rgba(255,255,255,0.04)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        opacity: 0.9,
+      }}
+    >
+      {/* Blue gradient background */}
+      <div
         style={{
-          background: 'linear-gradient(90deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.05) 100%)',
-          border: '2px solid rgba(255,255,255,1)',
-          boxShadow: '0 4px 16px 0 rgba(0,0,0,0.10), 0 1px 4px 0 rgba(255,255,255,0.04)',
-          //backdropFilter: 'blur(16px)',
-         // WebkitBackdropFilter: 'blur(16px)',
-          opacity: 0.9,
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          width: '1693.2px',
+          height: '462.05px',
+          transform: 'translate(-50%, -50%) rotate(-26.49deg)',
+          zIndex: 0,
+          pointerEvents: 'none',
+          opacity: 0.3,
+          background: `
+            linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%),
+            linear-gradient(90deg, #017AFF 0%, #004AAC 100%),
+            linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%)
+
+          `,
+          filter: 'blur(30px)',
         }}
-      >
-        {/* Blue gradient background */}
-        <tbody style={{ position: 'relative', zIndex: 10 }}>
-          <tr style={{ position: 'absolute', top: '10%', left: '40%', width: '1693.2px', height: '462.05px', transform: 'translate(-30%, -30%) rotate(-26.49deg)', zIndex: 0, pointerEvents: 'none', opacity: 0.3, background: 'linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%), linear-gradient(90deg, #017AFF 0%, #004AAC 100%), linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%)', filter: 'blur(30px)' }} />
-        </tbody>
-        <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id} className="border-b border-slate-700">
-              {headerGroup.headers.map((header) => {
-                return (
-                  <TableHead key={header.id} className="px-4 py-4">
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                  </TableHead>
-                )
-              })}
-            </TableRow>
-          ))}
-        </TableHeader>
-        <TableBody>
-          {table.getRowModel().rows?.length ? (
-            table.getRowModel().rows.map((row, index) => (
-              <TableRow
-                key={row.id}
-                className={`hover:bg-slate-800/50 transition-colors${index !== table.getRowModel().rows.length - 1 ? ' border-b border-slate-800' : ''}`}
-              >
-                {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="py-4 px-4">
-                    {flexRender(
-                      cell.column.columnDef.cell,
-                      cell.getContext()
-                    )}
-                  </TableCell>
-                ))}
+      />
+      <div className="relative z-10">
+        <Table>
+          <TableHeader>
+            {table.getHeaderGroups().map((headerGroup) => (
+              <TableRow key={headerGroup.id} className="border-b border-slate-700">
+                {headerGroup.headers.map((header) => {
+                  return (
+                    <TableHead key={header.id} className="px-4 py-4">
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                    </TableHead>
+                  )
+                })}
               </TableRow>
-            ))
-          ) : (
-            <TableRow>
-              <TableCell
-                colSpan={columns.length}
-                className="h-24 text-center"
-              >
-                No results.
-              </TableCell>
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
+            ))}
+          </TableHeader>
+          <TableBody>
+            {table.getRowModel().rows?.length ? (
+              table.getRowModel().rows.map((row, index) => (
+                <TableRow
+                  key={row.id}
+                  className={`hover:bg-slate-800/50 transition-colors${index !== table.getRowModel().rows.length - 1 ? ' border-b border-slate-800' : ''}`}
+                >
+                  {row.getVisibleCells().map((cell) => (
+                    <TableCell key={cell.id} className="py-4 px-4">
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell
+                  colSpan={columns.length}
+                  className="h-24 text-center"
+                >
+                  No results.
+                </TableCell>
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      </div>
     </div>
   )
 }
