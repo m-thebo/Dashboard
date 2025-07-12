@@ -257,14 +257,22 @@ export default function TableSection() {
   })
 
   return (
-    <div className="max-w-7xl w-full mx-auto -mt-8 -mb-0.1 relative rounded-3xl overflow-hidden border border-white/20 ">
-      {/* Blue gradient background (outside table, inside container) */}
-      <div
-        className="absolute top-[10%] left-[40%] w-[1693.2px] h-[462.05px] -translate-x-[30%] -translate-y-[30%] rotate-[-26.49deg] rounded-3xl opacity-30 blur-[30px] pointer-events-none z-0 bg-gradient-to-r from-black via-transparent to-black before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#017AFF] before:to-[#004AAC] before:opacity-80"
-      />
+    <div className="px-4 p-2 max-w-7xl w-full mx-auto -mt-8 -mb-0.1">
       <Table
-        className="relative rounded-3xl w-full h-full overflow-hidden z-10 bg-transparent shadow-[0_4px_16px_0_rgba(0,0,0,0.10),0_1px_4px_0_rgba(255,255,255,0.04)] backdrop-blur-[16px]"
+        className="relative rounded-3xl w-full overflow-hidden"
+        style={{
+          background: 'linear-gradient(90deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.05) 100%)',
+          border: '2px solid rgba(255,255,255,1)',
+          boxShadow: '0 4px 16px 0 rgba(0,0,0,0.10), 0 1px 4px 0 rgba(255,255,255,0.04)',
+          //backdropFilter: 'blur(16px)',
+         // WebkitBackdropFilter: 'blur(16px)',
+          opacity: 0.9,
+        }}
       >
+        {/* Blue gradient background */}
+        <tbody style={{ position: 'relative', zIndex: 10 }}>
+          <tr style={{ position: 'absolute', top: '10%', left: '40%', width: '1693.2px', height: '462.05px', transform: 'translate(-30%, -30%) rotate(-26.49deg)', zIndex: 0, pointerEvents: 'none', opacity: 0.3, background: 'linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%), linear-gradient(90deg, #017AFF 0%, #004AAC 100%), linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%)', filter: 'blur(30px)' }} />
+        </tbody>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id} className="border-b border-slate-700">
