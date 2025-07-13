@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Search, Filter, Grid3X3, List } from "lucide-react"
@@ -8,12 +8,31 @@ import { Search, Filter, Grid3X3, List } from "lucide-react"
 const SearchSection = () => {
   const [view, setView] = useState<"grid" | "list">("grid")
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) { // sm breakpoint
+        setView("list")
+      } else {
+        setView("grid")
+      }
+    }
+
+    // Initial view based on screen size
+    handleResize()
+
+    // Event listener for window resize
+    window.addEventListener('resize', handleResize)
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
     <section className="px-4 py-8">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-6 md:gap-0">
         <div className="-mt-7 text-center md:text-left w-full md:w-auto">
           <h2 className="text-2xl font-semibold mb-2">Find Prop Firms</h2>
-          <p className="text-gray-300 text-sm font-medium leading-relaxed" style={{ opacity: 0.7 }}>
+          <p className="text-gray-300 text-sm font-medium leading-relaxed opacity-70">
             Browse our detailed comparison table to find the best prop trading firm for your needs.
           </p>
         </div>
@@ -24,15 +43,13 @@ const SearchSection = () => {
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white w-5 h-5 z-10" />
                 <Input
                   placeholder="Search Firms"
-                  className="pl-12 pr-4 text-white placeholder:text-gray-300 shadow-xl font-medium backdrop-blur-xl w-full h-12"
+                  className="pl-12 pr-4 text-white placeholder:text-gray-300 shadow-xl font-medium backdrop-blur-xl w-full h-12 rounded-[10px] opacity-70"
                   style={{
-                    borderRadius: "10px",
                     background: "linear-gradient(360deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.12) 100%)",
                     border: "1.5px solid rgba(255,255,255,0.25)",
                     WebkitBackdropFilter: "blur(20px)",
                     backdropFilter: "blur(20px)",
                     boxShadow: "0 8px 32px 0 rgba(0,0,0,0.37), inset 0 1px 0 0 rgba(255,255,255,0.15)",
-                    opacity: 0.7,
                   }}
                 />
               </div>
@@ -41,9 +58,8 @@ const SearchSection = () => {
               <Button
                 variant="outline"
                 size="icon"
-                className="shadow-xl transition-all duration-300 text-white hover:text-gray-300 w-12 min-w-0 h-12 bg-transparent"
+                className="shadow-xl transition-all duration-300 text-white hover:text-gray-300 w-12 min-w-0 h-12 bg-transparent rounded-[10px]"
                 style={{
-                  borderRadius: "10px",
                   background: "linear-gradient(360deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.12) 100%)",
                   border: "1.5px solid rgba(255,255,255,0.25)",
                   WebkitBackdropFilter: "blur(20px)",
@@ -56,12 +72,10 @@ const SearchSection = () => {
 
               {/* Custom Toggle Switch with Sliding Indicator */}
               <div
-                className="relative flex rounded-[10px] backdrop-blur-xl p-1 flex-1 sm:w-[100px]"
+                className="relative flex rounded-[10px] backdrop-blur-xl p-1 flex-1 sm:w-[100px] h-12"
                 style={{
                   width: "100px",
-                  height: "48px",
                   boxShadow: "0 8px 32px 0 rgba(0,0,0,0.37), inset 0 1px 0 0 rgba(255,255,255,0.15)",
-                  borderRadius: "10px",
                   background: "linear-gradient(360deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.12) 100%)",
                   border: "1.5px solid rgba(255,255,255,0.25)",
                   WebkitBackdropFilter: "blur(20px)",

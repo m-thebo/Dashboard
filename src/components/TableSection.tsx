@@ -130,14 +130,7 @@ export const columns: ColumnDef<Firm>[] = [
           <div className="w-8 h-8 rounded-lg flex items-center justify-center">
             <img src={firm.logo || "/placeholder.svg"} alt={`${firm.name} logo`} className="w-7 h-7 object-contain" />
           </div>
-          <span
-            className="text-white"
-            style={{
-              color: "#ffffff",
-              textShadow: "0 0 1px rgba(255,255,255,0.8)",
-              isolation: "isolate",
-            }}
-          >
+          <span className="text-white isolate" style={{ textShadow: "0 0 1px rgba(255,255,255,0.8)" }}>
             {firm.name}
           </span>
         </div>
@@ -163,14 +156,7 @@ export const columns: ColumnDef<Firm>[] = [
       return (
         <div className="flex items-center gap-1">
           <Star className="w-4 h-4 fill-yellow-400 text-yellow-400 drop-shadow-lg opacity-90" />
-          <span
-            className="text-white"
-            style={{
-              color: "#ffffff",
-              textShadow: "0 0 1px rgba(255,255,255,0.8)",
-              isolation: "isolate",
-            }}
-          >
+          <span className="text-white isolate" style={{ textShadow: "0 0 1px rgba(255,255,255,0.8)" }}>
             {rating}
           </span>
         </div>
@@ -194,14 +180,7 @@ export const columns: ColumnDef<Firm>[] = [
     cell: ({ row }) => {
       const profitSplit = row.getValue("profitSplit") as string
       return (
-        <span
-          className="text-white"
-          style={{
-            color: "#ffffff",
-            textShadow: "0 0 1px rgba(255,255,255,0.8)",
-            isolation: "isolate",
-          }}
-        >
+        <span className="text-white isolate" style={{ textShadow: "0 0 1px rgba(255,255,255,0.8)" }}>
           {profitSplit}
         </span>
       )
@@ -224,14 +203,7 @@ export const columns: ColumnDef<Firm>[] = [
     cell: ({ row }) => {
       const accountSize = row.getValue("accountSize") as string
       return (
-        <span
-          className="text-white"
-          style={{
-            color: "#ffffff",
-            textShadow: "0 0 1px rgba(255,255,255,0.8)",
-            isolation: "isolate",
-          }}
-        >
+        <span className="text-white isolate" style={{ textShadow: "0 0 1px rgba(255,255,255,0.8)" }}>
           {accountSize}
         </span>
       )
@@ -254,14 +226,7 @@ export const columns: ColumnDef<Firm>[] = [
     cell: ({ row }) => {
       const maxDrawdown = row.getValue("maxDrawdown") as string
       return (
-        <span
-          className="text-white"
-          style={{
-            color: "#ffffff",
-            textShadow: "0 0 1px rgba(255,255,255,0.8)",
-            isolation: "isolate",
-          }}
-        >
+        <span className="text-white isolate" style={{ textShadow: "0 0 1px rgba(255,255,255,0.8)" }}>
           {maxDrawdown}
         </span>
       )
@@ -284,14 +249,7 @@ export const columns: ColumnDef<Firm>[] = [
     cell: ({ row }) => {
       const price = row.getValue("price") as string
       return (
-        <span
-          className="text-white"
-          style={{
-            color: "#ffffff",
-            textShadow: "0 0 1px rgba(255,255,255,0.8)",
-            isolation: "isolate",
-          }}
-        >
+        <span className="text-white isolate" style={{ textShadow: "0 0 1px rgba(255,255,255,0.8)" }}>
           {price}
         </span>
       )
@@ -314,38 +272,29 @@ export default function TableSection() {
   })
 
   return (
-    <div className="p-2 max-w-7xl w-full mx-auto -mt-8 -mb-0.1">
+
       <Table
-        className="relative rounded-3xl w-full overflow-hidden"
+        className="relative rounded-3xl w-full overflow-hidden opacity-90"
         style={{
           background: "linear-gradient(90deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.05) 100%)",
           border: "1.5px solid rgba(255,255,255,0.2)",
           boxShadow: "0 4px 16px 0 rgba(0,0,0,0.10), 0 1px 4px 0 rgba(255,255,255,0.04)",
           backdropFilter: "blur(100px)",
           WebkitBackdropFilter: "blur(100px)",
-          opacity: 0.9,
         }}
       >
         {/* Blue gradient background - keeping exactly as is */}
-        <tbody style={{ position: "relative", zIndex: 10 }}>
+        <tbody className="relative z-10">
           <tr
+            className="absolute top-1/2 left-[40%] w-[1693.2px] h-[400.05px] translate-x-[-40%] translate-y-[10%] rotate-[-26.49deg] z-0 pointer-events-none opacity-40"
             style={{
-              position: "absolute",
-              top: "50%",
-              left: "40%",
-              width: "1693.2px",
-              height: "400.05px",
-              transform: "translate(-40%, 10%) rotate(-26.49deg)",
-              zIndex: 0,
-              pointerEvents: "none",
-              opacity: 0.4,
               background:
                 "linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%), linear-gradient(90deg, #017AFF 0%, #004AAC 100%), linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%)",
               filter: "blur(100px)",
             }}
           />
         </tbody>
-        <TableHeader style={{ isolation: "isolate", position: "relative", zIndex: 20 }}>
+        <TableHeader className="isolate relative z-20">
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id} className="border-b border-slate-700">
               {headerGroup.headers.map((header) => {
@@ -358,7 +307,7 @@ export default function TableSection() {
             </TableRow>
           ))}
         </TableHeader>
-        <TableBody style={{ isolation: "isolate", position: "relative", zIndex: 20 }}>
+        <TableBody className="isolate relative z-20">
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row, index) => (
               <TableRow
@@ -381,6 +330,6 @@ export default function TableSection() {
           )}
         </TableBody>
       </Table>
-    </div>
+    
   )
 }
