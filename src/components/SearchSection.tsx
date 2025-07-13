@@ -22,10 +22,10 @@ const SearchSection = () => {
       }
     }
 
-    // Set initial view based on screen size
+    // Initial view based on screen size
     handleResize()
 
-    // Add event listener for window resize
+    // Event listener for window resize
     window.addEventListener("resize", handleResize)
 
     // Cleanup

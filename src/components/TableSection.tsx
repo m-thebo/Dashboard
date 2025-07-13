@@ -283,7 +283,7 @@ export default function TableSection() {
           WebkitBackdropFilter: "blur(100px)",
         }}
       >
-        {/* Blue gradient background - keeping exactly as is */}
+        {/* Blue gradient background*/}
         <tbody className="relative z-10">
           <tr
             className="absolute top-1/2 left-[40%] w-[1693.2px] h-[400.05px] translate-x-[-40%] translate-y-[10%] rotate-[-26.49deg] z-0 pointer-events-none opacity-40"
