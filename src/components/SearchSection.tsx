@@ -44,7 +44,7 @@ const SearchSection = () => {
           </div>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full lg:w-auto">
             <div className="flex flex-col gap-3 w-full lg:w-auto">
-              <div className="w-full sm:w-full max-w-md">
+              <div className="w-full sm:w-full">
                 <div className="relative flex-1 h-11">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white w-4 h-4 z-10" />
                   <Input

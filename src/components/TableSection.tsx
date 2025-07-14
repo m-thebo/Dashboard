@@ -266,7 +266,7 @@ export default function TableSection() {
   })
 
   return (
-
+    <div className="max-w-7xl mx-auto w-full">
       <Table
         className="relative rounded-3xl w-full overflow-hidden opacity-90 table-bg-glass"
       >
@@ -312,6 +312,6 @@ export default function TableSection() {
           )}
         </TableBody>
       </Table>
-    
+    </div>
   )
 }
