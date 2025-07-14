@@ -37,20 +37,7 @@ const HeroHeading = () => (
 const AIRecommendationCard = () => (
   <div className="w-full max-w-[390px] min-h-[220px]">
     <Card
-      className="relative rounded-[14px] shadow-2xl overflow-hidden border w-full min-h-[220px]"
-      style={{
-        background: "linear-gradient(135deg, #017AFF 0%, #004AAC 100%)",
-        border: "1.2px solid #004AAC",
-        boxShadow: `
-          inset 0 1.2px 5px 0 #004AAC33,
-          inset 0 1px 3px 0 #017AFF44,
-          inset 0 -1.2px 5px 0 #004AAC22,
-          0 1.2px 5px 0 #004AAC33,
-          0 2px 8px 0 #017AFF22,
-          0 4px 16px 0 #004AAC22,
-          0 8px 32px 0 #017AFF11
-        `,
-      }}
+      className="relative rounded-[14px] shadow-2xl overflow-hidden border w-full min-h-[220px] ai-card-bg"
     >
       {/* SVG background */}
       <img
@@ -85,22 +72,7 @@ const AIRecommendationCard = () => (
 const FeaturedCard1 = () => (
   <div className="w-full md:w-[320px] flex-1">
     <Card
-      className="relative rounded-2xl shadow-2xl overflow-hidden border h-full flex flex-col w-full"
-      style={{
-        background: `
-          linear-gradient(95deg,
-            rgba(198,192,200,0) 0%,
-            rgba(198,192,200,0.12) 10%,
-            rgba(198,192,200,0.5) 80%,
-            rgba(198,192,200,0.4) 90%,
-            rgba(198,192,200,0.09) 100%
-          ),
-          linear-gradient(180deg, rgba(93,91,92,0.3) 0%, rgba(93,91,92,0.3) 100%)
-        `,
-        border: "1px solid rgba(255,255,255,0.2)",
-        backdropFilter: "blur(18px)",
-        boxShadow: "0 4px 16px 0 rgba(198,192,200,0.15), 0 1.5px 6px 0 rgba(198,192,200,0.10)",
-      }}
+      className="relative rounded-2xl shadow-2xl overflow-hidden border h-full flex flex-col w-full featured-card1-bg"
     >
       {/* Number 02 in background */}
       <img
@@ -162,22 +134,7 @@ const FeaturedCard1 = () => (
 const FeaturedCard2 = () => (
   <div className="w-full md:w-[320px] flex-1 md:-mt-2">
     <Card
-      className="relative rounded-2xl shadow-2xl overflow-hidden border h-full flex flex-col w-full"
-      style={{
-        background: `
-          linear-gradient(95deg,
-            rgba(226,170,0,0) 0%,
-            rgba(226,170,0,0.12) 10%,
-            rgba(226,170,0,0.7) 80%,
-            rgba(226,170,0,0.4) 90%,
-            rgba(226,170,0,0.09) 100%
-          ),
-          linear-gradient(180deg, rgba(137,102,0,0.3) 0%, rgba(137,102,0,0.3) 100%)
-        `,
-        border: "1px solid rgba(255,255,255,0.2)",
-        backdropFilter: "blur(18px)",
-        boxShadow: "0 4px 16px 0 rgba(226,170,0,0.15), 0 1.5px 6px 0 rgba(226,170,0,0.10)",
-      }}
+      className="relative rounded-2xl shadow-2xl overflow-hidden border h-full flex flex-col w-full featured-card2-bg"
     >
       {/* Number 01 in background */}
       <img
@@ -239,22 +196,7 @@ const FeaturedCard2 = () => (
 const FeaturedCard3 = () => (
   <div className="w-full md:w-[320px] flex-1">
     <Card
-      className="relative rounded-2xl shadow-2xl overflow-hidden border h-full flex flex-col w-full"
-      style={{
-        background: `
-          linear-gradient(95deg,
-            rgba(150,92,42,0) 0%,
-            rgba(150,92,42,0.12) 10%,
-            rgba(150,92,42,0.7) 80%,
-            rgba(150,92,42,0.5) 90%,
-            rgba(150,92,42,0.09) 100%
-          ),
-          linear-gradient(180deg, rgba(93,62,43,0.3) 0%, rgba(93,62,43,0.3) 100%)
-        `,
-        border: "1px solid rgba(255,255,255,0.2)",
-        backdropFilter: "blur(18px)",
-        boxShadow: "0 4px 16px 0 rgba(150,92,42,0.15), 0 1.5px 6px 0 rgba(150,92,42,0.10)",
-      }}
+      className="relative rounded-2xl shadow-2xl overflow-hidden border h-full flex flex-col w-full featured-card3-bg"
     >
       {/* Number 03 in background */}
       <img

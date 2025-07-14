@@ -122,4 +122,112 @@
     font-family: 'Poppins';
     background: linear-gradient(180deg, #000021 0%, #00000D 100%) !important;
   }
+
 }
+
+@layer utilities {
+  /* Text Shadows */
+  .text-shadow-white-sm {
+    text-shadow: 0 0 1px rgba(255,255,255,0.5);
+  }
+  .text-shadow-white-md {
+    text-shadow: 0 0 1px rgba(255,255,255,0.8);
+  }
+
+  /* Table background and border */
+  .table-bg-glass {
+    background: linear-gradient(90deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.05) 100%);
+    border: 1.5px solid rgba(255,255,255,0.2);
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.10), 0 1px 4px 0 rgba(255,255,255,0.04);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
+  }
+
+  /* Blue gradient background for table overlay */
+  .table-blue-gradient {
+    background:
+      linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%),
+      linear-gradient(90deg, #017AFF 0%, #004AAC 100%),
+      linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%);
+    filter: blur(100px);
+  }
+
+  /* AI Recommendation Card */
+  .ai-card-bg {
+    background: linear-gradient(135deg, #017AFF 0%, #004AAC 100%);
+    border: 1.2px solid #004AAC;
+    box-shadow:
+      inset 0 1.2px 5px 0 #004AAC33,
+      inset 0 1px 3px 0 #017AFF44,
+      inset 0 -1.2px 5px 0 #004AAC22,
+      0 1.2px 5px 0 #004AAC33,
+      0 2px 8px 0 #017AFF22,
+      0 4px 16px 0 #004AAC22,
+      0 8px 32px 0 #017AFF11;
+  }
+
+  /* Featured Card 1 */
+  .featured-card1-bg {
+    background:
+      linear-gradient(95deg,
+        rgba(198,192,200,0) 0%,
+        rgba(198,192,200,0.12) 10%,
+        rgba(198,192,200,0.5) 80%,
+        rgba(198,192,200,0.4) 90%,
+        rgba(198,192,200,0.09) 100%),
+      linear-gradient(180deg, rgba(93,91,92,0.3) 0%, rgba(93,91,92,0.3) 100%);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 4px 16px 0 rgba(198,192,200,0.15), 0 1.5px 6px 0 rgba(198,192,200,0.10);
+  }
+
+  /* Featured Card 2 */
+  .featured-card2-bg {
+    background:
+      linear-gradient(95deg,
+        rgba(226,170,0,0) 0%,
+        rgba(226,170,0,0.12) 10%,
+        rgba(226,170,0,0.7) 80%,
+        rgba(226,170,0,0.4) 90%,
+        rgba(226,170,0,0.09) 100%),
+      linear-gradient(180deg, rgba(137,102,0,0.3) 0%, rgba(137,102,0,0.3) 100%);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 4px 16px 0 rgba(226,170,0,0.15), 0 1.5px 6px 0 rgba(226,170,0,0.10);
+  }
+
+  /* Featured Card 3 */
+  .featured-card3-bg {
+    background:
+      linear-gradient(95deg,
+        rgba(150,92,42,0) 0%,
+        rgba(150,92,42,0.12) 10%,
+        rgba(150,92,42,0.7) 80%,
+        rgba(150,92,42,0.5) 90%,
+        rgba(150,92,42,0.09) 100%),
+      linear-gradient(180deg, rgba(93,62,43,0.3) 0%, rgba(93,62,43,0.3) 100%);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 4px 16px 0 rgba(150,92,42,0.15), 0 1.5px 6px 0 rgba(150,92,42,0.10);
+  }
+
+  /* SearchSection input/button backgrounds */
+  .search-glass-bg {
+    background: linear-gradient(360deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.12) 100%);
+    border: 1.5px solid rgba(255,255,255,0.25);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37), inset 0 1px 0 0 rgba(255,255,255,0.15);
+  }
+
+  /* SearchSection toggle background */
+  .search-toggle-bg {
+    background: linear-gradient(360deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.3) 100%);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.3), inset 0 1px 0 0 rgba(255,255,255,0.3);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+}
+
+

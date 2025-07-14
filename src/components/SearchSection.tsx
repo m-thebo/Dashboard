@@ -35,7 +35,6 @@ const SearchSection = () => {
   return (
     <section className="px-4 py-4 md:py-6 lg:py-8">
       <div className="max-w-7xl mx-auto">
-        {/* Small screens - original layout */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6 md:mb-8 gap-4 md:gap-6 lg:gap-0 md:hidden">
           <div className="-mt-4 text-center lg:text-left w-full lg:w-auto">
             <h2 className="text-xl font-semibold mb-2">Find Prop Firms</h2>
@@ -50,14 +49,7 @@ const SearchSection = () => {
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white w-4 h-4 z-10" />
                   <Input
                     placeholder="Search Firms"
-                    className="pl-10 pr-4 text-white placeholder:text-gray-300 shadow-xl font-medium backdrop-blur-xl w-full h-11 rounded-[10px] opacity-70 text-sm"
-                    style={{
-                      background: "linear-gradient(360deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.12) 100%)",
-                      border: "1.5px solid rgba(255,255,255,0.25)",
-                      WebkitBackdropFilter: "blur(20px)",
-                      backdropFilter: "blur(20px)",
-                      boxShadow: "0 8px 32px 0 rgba(0,0,0,0.37), inset 0 1px 0 0 rgba(255,255,255,0.15)",
-                    }}
+                    className="pl-10 pr-4 text-white placeholder:text-gray-300 shadow-xl font-medium backdrop-blur-xl w-full h-11 rounded-[10px] opacity-70 text-sm search-glass-bg"
                   />
                 </div>
               </div>
@@ -65,46 +57,21 @@ const SearchSection = () => {
                 <Button
                   variant="outline"
                   size="icon"
-                  className="shadow-xl transition-all duration-300 text-white hover:text-gray-300 w-11 min-w-0 h-11 bg-transparent rounded-[10px]"
-                  style={{
-                    background: "linear-gradient(360deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.12) 100%)",
-                    border: "1.5px solid rgba(255,255,255,0.25)",
-                    WebkitBackdropFilter: "blur(20px)",
-                    backdropFilter: "blur(20px)",
-                    boxShadow: "0 8px 32px 0 rgba(0,0,0,0.37), inset 0 1px 0 0 rgba(255,255,255,0.15)",
-                  }}
+                  className="shadow-xl transition-all duration-300 text-white hover:text-gray-300 w-11 min-w-0 h-11 bg-transparent rounded-[10px] search-glass-bg"
                 >
                   <Filter className="w-4 h-4 hover:text-gray-100" />
                 </Button>
 
                 <div
-                  className="relative flex rounded-[10px] backdrop-blur-xl p-1 flex-1 sm:w-[100px] h-11"
-                  style={{
-                    width: "100px",
-                    boxShadow: "0 8px 32px 0 rgba(0,0,0,0.37), inset 0 1px 0 0 rgba(255,255,255,0.15)",
-                    background: "linear-gradient(360deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.12) 100%)",
-                    border: "1.5px solid rgba(255,255,255,0.25)",
-                    WebkitBackdropFilter: "blur(20px)",
-                    backdropFilter: "blur(20px)",
-                  }}
+                  className="relative flex rounded-[10px] backdrop-blur-xl p-1 flex-1 sm:w-[100px] h-11 search-glass-bg w-[100px]"
                 >
                   <div
-                    className="absolute top-1 bottom-1 left-1 transition-all duration-300 ease-out rounded-[8px]"
-                    style={{
-                      width: "calc(50% - 4px)",
-                      background: "linear-gradient(360deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.3) 100%)",
-                      border: "1px solid rgba(255,255,255,0.4)",
-                      boxShadow: "0 4px 16px 0 rgba(0,0,0,0.3), inset 0 1px 0 0 rgba(255,255,255,0.3)",
-                      WebkitBackdropFilter: "blur(20px)",
-                      backdropFilter: "blur(20px)",
-                      transform: view === "grid" ? "translateX(0%)" : "translateX(100%)",
-                    }}
+                    className={`absolute top-1 bottom-1 left-1 transition-all duration-300 ease-out rounded-[8px] search-toggle-bg ${view === "grid" ? "translate-x-0" : "translate-x-full"} w-[calc(50%-4px)]`}
                   />
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="relative z-10 w-1/2 h-full text-white transition-all duration-200 hover:bg-transparent p-0 border-0"
-                    style={{ opacity: view === "grid" ? 1 : 0.6 }}
+                    className={`relative z-10 w-1/2 h-full text-white transition-all duration-200 hover:bg-transparent p-0 border-0 ${view === "grid" ? "opacity-100" : "opacity-60"}`}
                     onClick={() => setView("grid")}
                     aria-label="Grid view"
                   >
@@ -113,8 +80,7 @@ const SearchSection = () => {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="relative z-10 w-1/2 h-full text-white transition-all duration-200 hover:bg-transparent p-0 border-0"
-                    style={{ opacity: view === "list" ? 1 : 0.6 }}
+                    className={`relative z-10 w-1/2 h-full text-white transition-all duration-200 hover:bg-transparent p-0 border-0 ${view === "list" ? "opacity-100" : "opacity-60"}`}
                     onClick={() => setView("list")}
                     aria-label="List view"
                   >
@@ -126,7 +92,7 @@ const SearchSection = () => {
           </div>
         </div>
 
-        {/* Medium and large screens - new layout */}
+        {/* Medium and large screens*/}
         <div className="hidden md:block">
           {/* Heading Section - separate row for medium screens */}
           <div className="flex flex-col md:flex-col lg:flex-row lg:items-center lg:justify-between mb-4 md:mb-6 lg:mb-8 gap-4 md:gap-6 lg:gap-0">
@@ -145,14 +111,7 @@ const SearchSection = () => {
                     <Search className="absolute left-3 md:left-4 top-1/2 transform -translate-y-1/2 text-white w-4 h-4 md:w-5 md:h-5 z-10" />
                     <Input
                       placeholder="Search Firms"
-                      className="pl-10 md:pl-12 pr-4 text-white placeholder:text-gray-300 shadow-xl font-medium backdrop-blur-xl w-full h-11 md:h-12 rounded-[10px] opacity-70 text-sm md:text-base"
-                      style={{
-                        background: "linear-gradient(360deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.12) 100%)",
-                        border: "1.5px solid rgba(255,255,255,0.25)",
-                        WebkitBackdropFilter: "blur(20px)",
-                        backdropFilter: "blur(20px)",
-                        boxShadow: "0 8px 32px 0 rgba(0,0,0,0.37), inset 0 1px 0 0 rgba(255,255,255,0.15)",
-                      }}
+                      className="pl-10 md:pl-12 pr-4 text-white placeholder:text-gray-300 shadow-xl font-medium backdrop-blur-xl w-full h-11 md:h-12 rounded-[10px] opacity-70 text-sm md:text-base search-glass-bg"
                     />
                   </div>
                 </div>
@@ -160,47 +119,21 @@ const SearchSection = () => {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="shadow-xl transition-all duration-300 text-white hover:text-gray-300 w-11 md:w-12 min-w-0 h-11 md:h-12 bg-transparent rounded-[10px]"
-                    style={{
-                      background: "linear-gradient(360deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.12) 100%)",
-                      border: "1.5px solid rgba(255,255,255,0.25)",
-                      WebkitBackdropFilter: "blur(20px)",
-                      backdropFilter: "blur(20px)",
-                      boxShadow: "0 8px 32px 0 rgba(0,0,0,0.37), inset 0 1px 0 0 rgba(255,255,255,0.15)",
-                    }}
+                    className="shadow-xl transition-all duration-300 text-white hover:text-gray-300 w-11 md:w-12 min-w-0 h-11 md:h-12 bg-transparent rounded-[10px] search-glass-bg"
                   >
                     <Filter className="w-4 h-4 md:w-5 md:h-5 hover:text-gray-100" />
                   </Button>
 
                   <div
-                    className="relative flex rounded-[10px] backdrop-blur-xl p-1 h-11 md:h-12"
-                    style={{
-                      width: "85px",
-                      minWidth: "85px",
-                      boxShadow: "0 8px 32px 0 rgba(0,0,0,0.37), inset 0 1px 0 0 rgba(255,255,255,0.15)",
-                      background: "linear-gradient(360deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.12) 100%)",
-                      border: "1.5px solid rgba(255,255,255,0.25)",
-                      WebkitBackdropFilter: "blur(20px)",
-                      backdropFilter: "blur(20px)",
-                    }}
+                    className="relative flex rounded-[10px] backdrop-blur-xl p-1 h-11 md:h-12 search-glass-bg w-[85px] min-w-[85px]"
                   >
                     <div
-                      className="absolute top-1 bottom-1 left-1 transition-all duration-300 ease-out rounded-[8px]"
-                      style={{
-                        width: "calc(50% - 4px)",
-                        background: "linear-gradient(360deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.3) 100%)",
-                        border: "1px solid rgba(255,255,255,0.4)",
-                        boxShadow: "0 4px 16px 0 rgba(0,0,0,0.3), inset 0 1px 0 0 rgba(255,255,255,0.3)",
-                        WebkitBackdropFilter: "blur(20px)",
-                        backdropFilter: "blur(20px)",
-                        transform: view === "grid" ? "translateX(0%)" : "translateX(100%)",
-                      }}
+                      className={`absolute top-1 bottom-1 left-1 transition-all duration-300 ease-out rounded-[8px] search-toggle-bg ${view === "grid" ? "translate-x-0" : "translate-x-full"} w-[calc(50%-4px)]`}
                     />
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="relative z-10 w-1/2 h-full text-white transition-all duration-200 hover:bg-transparent p-0 border-0"
-                      style={{ opacity: view === "grid" ? 1 : 0.6 }}
+                      className={`relative z-10 w-1/2 h-full text-white transition-all duration-200 hover:bg-transparent p-0 border-0 ${view === "grid" ? "opacity-100" : "opacity-60"}`}
                       onClick={() => setView("grid")}
                       aria-label="Grid view"
                     >
@@ -209,8 +142,7 @@ const SearchSection = () => {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="relative z-10 w-1/2 h-full text-white transition-all duration-200 hover:bg-transparent p-0 border-0"
-                      style={{ opacity: view === "list" ? 1 : 0.6 }}
+                      className={`relative z-10 w-1/2 h-full text-white transition-all duration-200 hover:bg-transparent p-0 border-0 ${view === "list" ? "opacity-100" : "opacity-60"}`}
                       onClick={() => setView("list")}
                       aria-label="List view"
                     >
