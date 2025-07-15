@@ -154,7 +154,7 @@
 
   /* AI Recommendation Card */
   .ai-card-bg {
-    background: linear-gradient(135deg, #017AFF 0%, #004AAC 100%);
+    background: linear-gradient(135deg, #017AFF 0%, #033a82 100%);
     border: 1.2px solid #004AAC;
     box-shadow:
       inset 0 1.2px 5px 0 #004AAC33,
@@ -213,7 +213,7 @@
 
   /* SearchSection input/button backgrounds */
   .search-glass-bg {
-    background: linear-gradient(360deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.12) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.08) 60%, rgba(255,255,255,0.04) 100%);
     border: 1.5px solid rgba(255,255,255,0.25);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
@@ -227,6 +227,91 @@
     box-shadow: 0 4px 16px 0 rgba(0,0,0,0.3), inset 0 1px 0 0 rgba(255,255,255,0.3);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
+  }
+
+  /* Hero Section Side Card Background */
+  .hero-sidecard-bg {
+    background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%);
+    border: 0.25px solid rgba(255,255,255,0.13);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  /* Hero Section Badge Background */
+  .hero-badge-bg {
+    background: linear-gradient(90deg, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.04) 100%);
+    border: 0.5px solid rgba(255,255,255,0.18);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .ftmo-card-bg, tr.ftmo-card-bg, tr.hover\:ftmo-card-bg:hover {
+    background: linear-gradient(135deg, #017AFF 0%, #004AAC 100%) !important;
+    border: 1.2px solid #004AAC;
+    box-shadow:
+      inset 0 1.2px 5px 0 #004AAC33,
+      inset 0 1px 3px 0 #017AFF44,
+      inset 0 -1.2px 5px 0 #004AAC22,
+      0 1.2px 5px 0 #004AAC33,
+      0 2px 8px 0 #017AFF22,
+      0 4px 16px 0 #004AAC22,
+      0 8px 32px 0 #017AFF11;
+  }
+  .whychoose-border {
+    border: 1px solid transparent;
+    border-image: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
+    border-image-slice: 1;
+    
+  }
+  .whychoose-gradient {
+    background:
+      linear-gradient(95deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%),
+      linear-gradient(95deg, #017AFF 0%, #004AAC 100%),
+      linear-gradient(95deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%);
+
+    filter: blur(140px);
+  }
+  .loading-fill, tr .loading-fill {
+    background: linear-gradient(135deg, #004AAC 0%, #017AFF 100%) !important;
+    box-shadow: 0 0 12px 2px #017AFF66, 0 2px 8px 0 #004AAC44;
+  }
+  .loading-fill-hover, tr .loading-fill-hover {
+    background: #fff !important;
+    box-shadow: 0 0 16px 4px #fff8, 0 2px 8px 0 #fff6;
+  }
+
+  .table-row-highlight {
+    background: linear-gradient(135deg, #017AFF 0%, #004AAC 100%) !important;
+    border-radius: 16px !important;
+    border: 1.2px solid #004AAC;
+    box-shadow:
+      inset 0 1.2px 5px 0 #004AAC33,
+      inset 0 1px 3px 0 #017AFF44,
+      inset 0 -1.2px 5px 0 #004AAC22,
+      0 1.2px 5px 0 #004AAC33,
+      0 2px 8px 0 #017AFF22,
+      0 4px 16px 0 #004AAC22,
+      0 8px 32px 0 #017AFF11;
+  }
+  .card-blue-gradient {
+    background:
+      linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%),
+      linear-gradient(90deg, #017AFF 0%, #004AAC 100%),
+      linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%);
+    filter: blur(100px);
+  }
+  .testimonials-blue-gradient {
+    background: linear-gradient(120deg, rgba(59,130,246,0.2) 0%, rgba(96,165,250,0.3) 100%);
+    filter: blur(80px);
+  }
+  .faq-blue-gradient {
+    background: linear-gradient(120deg, rgba(59,130,246,0.12) 0%, rgba(96,165,250,0.14) 100%);
+    filter: blur(60px);
+  }
+  .hide-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
   }
 }
 

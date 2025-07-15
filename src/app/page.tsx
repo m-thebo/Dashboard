@@ -1,13 +1,26 @@
 import CardSection from "../components/CardSection";
+import HeroSection from "../components/HeroSection";
 import SearchSection from "../components/SearchSection";
 import TableSection from "../components/TableSection";
+import WhyChooseSection from "../components/WhyChooseSection";
+import TopFirmsSection from "../components/TopFirmsTableSection";
+import AIQuizCardSection from "@/components/AIQuizCardSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import FAQSection from "@/components/FAQSection";
+
 
 export default function App() {
   return (
-<div className="min-h-screen h-full text-white relative overflow-hidden px-4 md:px-6 lg:px-12 xl:px-[100px] py-[30px] md:py-[40px] lg:py-[60px] pb-16 md:pb-24 lg:pb-32 font-poppins">
-      <CardSection />
+<div className="min-h-screen h-full text-white relative overflow-hidden font-poppins">
+      <HeroSection />
+      <WhyChooseSection />
+      <TopFirmsSection />
+      <AIQuizCardSection />
+      <TestimonialsSection />
+      <FAQSection />
+      {/* <CardSection />
       <SearchSection />
-      <TableSection />
+      <TableSection /> */}
     </div>
   );
 }
