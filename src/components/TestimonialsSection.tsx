@@ -30,7 +30,7 @@ const TestimonialsSection = () => (
       {/* Blue gradient background container */}
       <div className="testimonials-blue-gradient absolute top-1/2 left-1/2 w-[900px] h-[400px] -translate-x-1/2 -translate-y-1/2 rounded-[32px] opacity-80 z-0 pointer-events-none" />
       <h2 className="text-white text-2xl md:text-3xl font-semibold text-center mb-10 z-10">What Traders Say About Us</h2>
-      <div className="flex w-full md:flex-row flex-row gap-6 md:gap-6 md:justify-center items-stretch z-10 overflow-x-auto md:overflow-visible hide-scrollbar px-1 md:px-0">
+      <div className="flex w-full md:flex-row flex-row gap-6 md:gap-6 md:justify-center items-stretch z-10 overflow-x-auto md:overflow-visible hide-scrollbar px-1 md:px-0 py-3 md:py-0">
         {testimonials.map((t, i) => (
           <Card
             key={i}

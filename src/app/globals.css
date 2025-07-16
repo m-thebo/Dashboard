@@ -322,6 +322,15 @@
     background: linear-gradient(120deg, rgba(59,130,246,0.12) 0%, rgba(96,165,250,0.14) 100%);
     filter: blur(60px);
   }
+  
+  /* Hide scrollbar utility */
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
 }
 
 

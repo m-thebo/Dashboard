@@ -47,7 +47,7 @@ function HeroHeading() {
       <p className="text-base md:text-sm text-white/80 mb-4 w-full max-w-2xl">
         Discover top proprietary trading firms with our expert comparisons and insights. Compare ratings, funding, assets, and platforms to make informed trading decisions.
       </p>
-      <Button className="ftmo-card-bg text-white font-normal text-base rounded-lg px-5 py-5 md:mb-32 shadow-lg border border-[#004AAC]">
+      <Button className="ftmo-card-bg text-white font-normal text-base rounded-lg px-5 py-5 md:mb-32 shadow-lg border border-[#004AAC] hover:scale-102 active:scale-98 hover:shadow-2xl transition-all duration-200 cursor-pointer hover:brightness-110">
         Compare Firms Now
       </Button>
     </div>
@@ -134,7 +134,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 hero-top-glow bg-black/60 z-0" aria-hidden="true" />
       <HeroHeading /> 
       <div className="relative z-10 w-full max-w-7xl mt-2">
-        <div className="flex flex-row md:flex-row gap-4 md:gap-6 overflow-x-auto overflow-y-hidden md:overflow-visible px-1 md:px-0 hide-scrollbar md:justify-center items-center">
+        <div className="flex flex-row md:flex-row gap-4 md:gap-6 overflow-x-auto overflow-y-hidden md:overflow-visible px-1 md:px-0 hide-scrollbar md:justify-center items-center py-3 md:py-0">
           <HeroFirmCardLeft firm={firms[0]} />
           <HeroFirmCardMiddle firm={firms[1]} />
           <HeroFirmCardRight firm={firms[2]} />

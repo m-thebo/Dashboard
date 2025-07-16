@@ -112,7 +112,7 @@ const columns: ColumnDef<Firm>[] = [
       <Button
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        className="text-slate-400 font-medium text-xs p-0 h-auto hover:bg-transparent text-shadow-white-sm"
+        className="text-slate-400 font-medium text-xs p-0 h-auto hover:bg-transparent hover:text-white text-shadow-white-sm"
       >
         FIRM <ArrowUpDown className="ml-1 h-3 w-3" />
       </Button>
@@ -133,7 +133,7 @@ const columns: ColumnDef<Firm>[] = [
       <Button
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        className="text-slate-400 font-medium text-xs p-0 h-auto hover:bg-transparent text-shadow-white-sm"
+        className="text-slate-400 font-medium text-xs p-0 h-auto hover:bg-transparent hover:text-white text-shadow-white-sm"
       >
         RATING <ArrowUpDown className="ml-1 h-3 w-3" />
       </Button>
@@ -157,7 +157,7 @@ const columns: ColumnDef<Firm>[] = [
       <Button
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        className="text-slate-400 font-medium text-xs p-0 h-auto hover:bg-transparent text-shadow-white-sm"
+        className="text-slate-400 font-medium text-xs p-0 h-auto hover:bg-transparent hover:text-white text-shadow-white-sm"
       >
         COUNTRY <ArrowUpDown className="ml-1 h-3 w-3" />
       </Button>
@@ -196,7 +196,7 @@ const columns: ColumnDef<Firm>[] = [
       <Button
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        className="text-slate-400 font-medium text-xs p-0 h-auto hover:bg-transparent text-shadow-white-sm"
+        className="text-slate-400 font-medium text-xs p-0 h-auto hover:bg-transparent hover:text-white text-shadow-white-sm"
       >
         YEARS <ArrowUpDown className="ml-1 h-3 w-3" />
       </Button>
@@ -210,7 +210,7 @@ const columns: ColumnDef<Firm>[] = [
       <Button
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        className="text-slate-400 font-medium text-xs p-0 h-auto hover:bg-transparent text-shadow-white-sm"
+        className="text-slate-400 font-medium text-xs p-0 h-auto hover:bg-transparent hover:text-white text-shadow-white-sm"
       >
         ASSETS <ArrowUpDown className="ml-1 h-3 w-3" />
       </Button>
@@ -235,7 +235,7 @@ const columns: ColumnDef<Firm>[] = [
       <Button
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        className="text-slate-400 font-medium text-xs p-0 h-auto hover:bg-transparent text-shadow-white-sm"
+        className="text-slate-400 font-medium text-xs p-0 h-auto hover:bg-transparent hover:text-white text-shadow-white-sm"
       >
         PLATFORMS <ArrowUpDown className="ml-1 h-3 w-3" />
       </Button>
@@ -258,7 +258,7 @@ const columns: ColumnDef<Firm>[] = [
       <Button
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        className="text-slate-400 font-medium text-xs p-0 h-auto hover:bg-transparent text-shadow-white-sm"
+        className="text-slate-400 font-medium text-xs p-0 h-auto hover:bg-transparent hover:text-white text-shadow-white-sm"
       >
         MAX ALLOCATION <ArrowUpDown className="ml-1 h-3 w-3" />
       </Button>
@@ -306,12 +306,12 @@ export default function TopFirmsTableSection() {
           <div className="flex w-full md:w-auto flex-row gap-2 md:gap-3">
             <Button
               variant="outline"
-              className="flex items-center justify-center h-11 w-11 min-w-0 p-0 rounded-[10px] search-glass-bg text-white md:order-none order-1"
+              className="flex items-center justify-center h-11 w-11 min-w-0 p-0 rounded-[10px] search-glass-bg text-white md:order-none order-1 hover:bg-white/10 hover:border-white/20 hover:scale-102 active:scale-98 transition-all duration-200 cursor-pointer shadow-lg hover:shadow-xl"
               aria-label="Filter"
             >
               <Filter className="w-5 h-5 text-white" />
             </Button>
-            <Button className="ftmo-card-bg text-white font-normal text-base rounded-lg px-5 py-5 shadow-lg border border-[#004AAC] flex-1 md:flex-none flex items-center gap-2 md:order-none order-2 min-w-[0] md:min-w-[unset]">
+            <Button className="ftmo-card-bg text-white font-normal text-base rounded-lg px-5 py-5 shadow-lg border border-[#004AAC] flex-1 md:flex-none flex items-center gap-2 md:order-none order-2 min-w-[0] md:min-w-[unset] hover:scale-102 active:scale-98 hover:shadow-2xl transition-all duration-200 cursor-pointer hover:brightness-110">
               <SlidersHorizontal className="w-5 h-5 text-white" />
               Compare Firms
             </Button>
@@ -376,7 +376,7 @@ export default function TopFirmsTableSection() {
           </Table>
         </div>
         <div className="flex justify-center mt-8">
-          <Button className="ftmo-card-bg text-white font-normal text-base rounded-lg px-5 py-5 shadow-lg border border-[#004AAC] flex items-center gap-2">
+          <Button className="ftmo-card-bg text-white font-normal text-base rounded-lg px-5 py-5 shadow-lg border border-[#004AAC] flex items-center gap-2 hover:scale-102 active:scale-98 hover:shadow-2xl transition-all duration-200 cursor-pointer hover:brightness-110">
             View full comparison
           </Button>
         </div>

@@ -1,7 +1,12 @@
 'use client';
 
 import * as React from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 
 const faqs = [
   {
@@ -28,43 +33,36 @@ const faqs = [
 ];
 
 const FAQSection = () => {
-  const [openIndex, setOpenIndex] = React.useState(0);
-
   return (
     <section className="w-full py-16 px-4 lg:px-0 flex flex-col items-center relative justify-center">
       {/* Blue gradient background container */}
       <div className="faq-blue-gradient absolute top-1/2 left-1/2 w-[700px] h-[340px] -translate-x-1/2 -translate-y-1/2 rounded-[32px] opacity-80 z-0 pointer-events-none" />
       <h2 className="text-white text-2xl md:text-3xl font-semibold text-center mb-10 z-10">Frequently Asked Questions</h2>
-      <div className="w-full max-w-2xl flex flex-col gap-4 z-10">
+      <Accordion
+        type="single"
+        collapsible
+        className="w-full max-w-2xl flex flex-col gap-4 z-10"
+        defaultValue="item-0"
+      >
         {faqs.map((faq, i) => (
-          <Card
+          <AccordionItem
             key={i}
-            className={`transition-all duration-300 overflow-hidden border-0 shadow-none rounded-xl cursor-pointer min-h-[64px] ${
-              openIndex === i ? "ftmo-card-bg" : "bg-[#23243a]/80"
-            }`}
-            onClick={() => setOpenIndex(i)}
+            value={`item-${i}`}
+            className={`transition-all duration-300 overflow-hidden border-0 shadow-none rounded-xl min-h-[64px] bg-[#23243a]/80 data-[state=open]:!bg-gradient-to-br data-[state=open]:!from-[#017AFF] data-[state=open]:!to-[#004AAC] data-[state=open]:!border-0 data-[state=open]:!shadow-[inset_0_1.2px_5px_0_#004AAC33,inset_0_1px_3px_0_#017AFF44,inset_0_-1.2px_5px_0_#004AAC22,0_1.2px_5px_0_#004AAC33,0_2px_8px_0_#017AFF22,0_4px_16px_0_#004AAC22,0_8px_32px_0_#017AFF11]`}
           >
-            <CardContent className="p-0">
-              <div className="flex flex-col">
-                <div
-                  className={`px-6 py-4 text-left font-normal text-base md:text-lg transition-colors duration-200 select-none ${
-                    openIndex === i ? "text-white" : "text-white/90"
-                  }`}
-                >
-                  {faq.question}
-                </div>
-                <div
-                  className={`px-6 pb-4 text-sm text-white/90 transition-all duration-300 ease-in-out ${
-                    openIndex === i ? "max-h-40 opacity-100 mt-0" : "max-h-0 opacity-0 -mt-2"
-                  } overflow-hidden`}
-                >
-                  {faq.answer}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+            <AccordionTrigger
+              className={`px-6 py-4 text-left font-normal text-base md:text-lg transition-colors duration-200 select-none text-white/90 data-[state=open]:!text-white border-0 no-underline hover:no-underline [&>svg]:hidden`}
+            >
+              {faq.question}
+            </AccordionTrigger>
+            <AccordionContent
+              className="px-6 pb-4 text-sm text-white/90 flex flex-col gap-2 transition-all duration-300 ease-in-out border-0"
+            >
+              {faq.answer}
+            </AccordionContent>
+          </AccordionItem>
         ))}
-      </div>
+      </Accordion>
     </section>
   );
 };
