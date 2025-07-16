@@ -25,7 +25,7 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-  <section className="w-full py-16 px-2 relative flex justify-center items-center">
+  <section className="w-full py-16 px-4 lg:px-0 relative flex justify-center items-center">
     <div className="max-w-6xl w-full mx-auto flex flex-col items-center relative">
       {/* Blue gradient background container */}
       <div className="testimonials-blue-gradient absolute top-1/2 left-1/2 w-[900px] h-[400px] -translate-x-1/2 -translate-y-1/2 rounded-[32px] opacity-80 z-0 pointer-events-none" />

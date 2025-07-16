@@ -267,7 +267,12 @@
       linear-gradient(95deg, #017AFF 0%, #004AAC 100%),
       linear-gradient(95deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%);
 
-    filter: blur(140px);
+    filter: blur(160px);
+  }
+  .whychoose-features-gradient {
+    background: linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%),
+      linear-gradient(90deg, #017AFF 0%, #004AAC 100%),
+      linear-gradient(90deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%);
   }
   .loading-fill, tr .loading-fill {
     background: linear-gradient(135deg, #004AAC 0%, #017AFF 100%) !important;
@@ -305,13 +310,6 @@
   .faq-blue-gradient {
     background: linear-gradient(120deg, rgba(59,130,246,0.12) 0%, rgba(96,165,250,0.14) 100%);
     filter: blur(60px);
-  }
-  .hide-scrollbar {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-  }
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
   }
 }
 

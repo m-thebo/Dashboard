@@ -47,7 +47,7 @@ function HeroHeading() {
       <p className="text-base md:text-sm text-white/80 mb-7 w-full max-w-2xl">
         Discover top proprietary trading firms with our expert comparisons and insights. Compare ratings, funding, assets, and platforms to make informed trading decisions.
       </p>
-      <Button className="ftmo-card-bg text-white font-semibold text-base rounded-lg px-5 py-5 shadow-lg border border-[#004AAC]">
+      <Button className="ftmo-card-bg text-white font-normal text-base rounded-lg px-5 py-5 shadow-lg border border-[#004AAC]">
         Compare Firms Now
       </Button>
     </div>
@@ -130,7 +130,7 @@ export default function HeroSection() {
         className="absolute inset-0 w-full h-full object-cover object-center scale-110 z-0 pointer-events-none select-none opacity-100"
         aria-hidden="true"
       />
-      {/* Overlay for readability (optional, can adjust opacity/color as needed) */}
+      {/* Overlay for readability */}
       <div className="absolute inset-0 bg-black/60 z-0" aria-hidden="true" />
       <HeroHeading />
       <div className="relative z-10 w-full max-w-7xl mt-2">

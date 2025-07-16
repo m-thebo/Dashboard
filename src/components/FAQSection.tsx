@@ -31,7 +31,7 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = React.useState(0);
 
   return (
-    <section className="w-full py-16 px-2 flex flex-col items-center relative justify-center">
+    <section className="w-full py-16 px-4 lg:px-0 flex flex-col items-center relative justify-center">
       {/* Blue gradient background container */}
       <div className="faq-blue-gradient absolute top-1/2 left-1/2 w-[700px] h-[340px] -translate-x-1/2 -translate-y-1/2 rounded-[32px] opacity-80 z-0 pointer-events-none" />
       <h2 className="text-white text-2xl md:text-3xl font-semibold text-center mb-10 z-10">Frequently Asked Questions</h2>
@@ -55,11 +55,8 @@ const FAQSection = () => {
                 </div>
                 <div
                   className={`px-6 pb-4 text-sm text-white/90 transition-all duration-300 ease-in-out ${
-                    openIndex === i ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                    openIndex === i ? "max-h-40 opacity-100 mt-0" : "max-h-0 opacity-0 -mt-2"
                   } overflow-hidden`}
-                  style={{
-                    marginTop: openIndex === i ? 0 : -8,
-                  }}
                 >
                   {faq.answer}
                 </div>

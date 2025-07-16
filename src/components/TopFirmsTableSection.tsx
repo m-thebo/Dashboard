@@ -182,8 +182,7 @@ const columns: ColumnDef<Firm>[] = [
             <img
               src={flagSrc}
               alt={country}
-              className="w-5 h-5 object-contain"
-              style={{ minWidth: 20 }}
+              className="w-5 h-5 object-contain min-w-[20px]"
             />
           )}
           {country}
@@ -289,7 +288,7 @@ export default function TopFirmsTableSection() {
   });
 
   return (
-    <section className="w-full py-12 md:py-16 px-2 md:px-0">
+    <section className="w-full py-12 md:py-16 px-4 lg:px-0">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-white text-2xl md:text-3xl font-semibold text-center mb-2">Compare Top Prop Trading Firms</h2>
         <p className="text-white/80 text-center mb-6 max-w-2xl mx-auto text-sm md:text-base">
@@ -312,16 +311,16 @@ export default function TopFirmsTableSection() {
             >
               <Filter className="w-5 h-5 text-white" />
             </Button>
-            <Button className="ftmo-card-bg text-white font-semibold text-base rounded-lg px-5 py-5 shadow-lg border border-[#004AAC] flex-1 md:flex-none flex items-center gap-2 md:order-none order-2 min-w-[0] md:min-w-[unset]">
+            <Button className="ftmo-card-bg text-white font-normal text-base rounded-lg px-5 py-5 shadow-lg border border-[#004AAC] flex-1 md:flex-none flex items-center gap-2 md:order-none order-2 min-w-[0] md:min-w-[unset]">
               <SlidersHorizontal className="w-5 h-5 text-white" />
               Compare Firms
             </Button>
           </div>
         </div>
-        <div className="relative rounded-2xl table-bg-glass">
+        <div className="relative rounded-2xl table-bg-glass min-h-[500px] overflow-hidden">
           {/* Blue gradient overlay */}
           <div className="absolute top-1/2 left-1/2 w-[900px] h-[350px] -translate-x-1/2 -translate-y-1/2 rotate-[-26.49deg] z-0 pointer-events-none opacity-40 table-blue-gradient" />
-          <Table className="relative z-10">
+          <Table className="relative z-10 overflow-hidden rounded-2xl">
             <TableHeader>
               {table.getHeaderGroups().map(headerGroup => (
                 <TableRow key={headerGroup.id} className="border-b border-slate-700 hover:bg-white/5 transition-colors">
@@ -377,7 +376,7 @@ export default function TopFirmsTableSection() {
           </Table>
         </div>
         <div className="flex justify-center mt-8">
-          <Button className="ftmo-card-bg text-white font-semibold text-base rounded-lg px-5 py-5 shadow-lg border border-[#004AAC] flex items-center gap-2">
+          <Button className="ftmo-card-bg text-white font-normal text-base rounded-lg px-5 py-5 shadow-lg border border-[#004AAC] flex items-center gap-2">
             View full comparison
           </Button>
         </div>

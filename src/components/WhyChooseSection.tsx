@@ -22,11 +22,13 @@ export default function WhyChooseSection() {
   return (
     <section className="w-full py-12 md:py-16 px-2 md:px-0 relative">
       <div className="max-w-7xl mx-auto relative">
-        {/* Blue gradient background as a separate container, centered and narrower */}
+        {/* Blue gradient background in section background */}
         <div className="absolute left-1/2 -translate-x-1/2 w-[70%] h-full whychoose-gradient rounded-2xl pointer-events-none z-0" />
         <h2 className="text-white text-xl md:text-2xl font-semibold text-center mb-10 relative z-10">Why Choose PropFirmLabs?</h2>
-        <div className="relative z-10 rounded-2xl py-10 px-2 md:px-8 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0 shadow-lg bg-transparent whychoose-border overflow-hidden">
-          <div className="w-full flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0">
+        <div className="relative z-10 py-10 px-2 md:px-8 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0 shadow-lg bg-transparent whychoose-border overflow-hidden">
+          {/* Blue gradient background inside features container */}
+          <div className="absolute top-1/2 left-1/3 w-[1400px] h-[400px] -translate-x-[40%] -translate-y-[40%] rotate-[-40deg] z-0 pointer-events-none opacity-80 blur-[50px] whychoose-features-gradient" />
+          <div className="w-full flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0 relative z-10">
             {features.map((feature, i) => (
               <div key={feature.title} className="flex flex-col items-center text-center flex-1 min-w-[180px] max-w-xs mx-auto">
                 <div className="w-14 h-14 flex items-center justify-center mb-4">
