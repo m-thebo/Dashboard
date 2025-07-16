@@ -27,7 +27,7 @@ export default function WhyChooseSection() {
         <h2 className="text-white text-xl md:text-2xl font-semibold text-center mb-10 relative z-10">Why Choose PropFirmLabs?</h2>
         <div className="relative z-10 py-10 px-2 md:px-8 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0 shadow-lg bg-transparent whychoose-border overflow-hidden">
           {/* Blue gradient background inside features container */}
-          <div className="absolute top-1/2 left-1/3 w-[1400px] h-[400px] -translate-x-[40%] -translate-y-[40%] rotate-[-40deg] z-0 pointer-events-none opacity-80 blur-[50px] whychoose-features-gradient" />
+          <div className="absolute top-1/2 left-1/3 w-[1400px] h-[400px] -translate-x-[40%] -translate-y-[40%] rotate-[-40deg] z-0 pointer-events-none md:opacity-80 md:blur-[50px] opacity-10 blur-[500px]  whychoose-features-gradient" />
           <div className="w-full flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0 relative z-10">
             {features.map((feature, i) => (
               <div key={feature.title} className="flex flex-col items-center text-center flex-1 min-w-[180px] max-w-xs mx-auto">
