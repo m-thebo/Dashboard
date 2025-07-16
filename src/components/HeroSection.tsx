@@ -41,13 +41,13 @@ const firms = [
 function HeroHeading() {
   return (
     <div className="relative z-10 flex flex-col items-center w-full text-center mb-8">
-      <h1 className="text-3xl sm:text-3xl font-semibold leading-tight mb-4 text-white drop-shadow-lg">
+      <h1 className="md:text-6xl text-3xl font-semibold leading-tight mb-4 text-white drop-shadow-lg">
         Find Your Perfect Prop<br className="hidden md:block" /> Trading Firm Today
       </h1>
-      <p className="text-base md:text-sm text-white/80 mb-7 w-full max-w-2xl">
+      <p className="text-base md:text-sm text-white/80 mb-4 w-full max-w-2xl">
         Discover top proprietary trading firms with our expert comparisons and insights. Compare ratings, funding, assets, and platforms to make informed trading decisions.
       </p>
-      <Button className="ftmo-card-bg text-white font-normal text-base rounded-lg px-5 py-5 shadow-lg border border-[#004AAC]">
+      <Button className="ftmo-card-bg text-white font-normal text-base rounded-lg px-5 py-5 md:mb-32 shadow-lg border border-[#004AAC]">
         Compare Firms Now
       </Button>
     </div>
@@ -131,8 +131,8 @@ export default function HeroSection() {
         aria-hidden="true"
       />
       {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-black/60 z-0" aria-hidden="true" />
-      <HeroHeading />
+      <div className="absolute inset-0 hero-top-glow bg-black/60 z-0" aria-hidden="true" />
+      <HeroHeading /> 
       <div className="relative z-10 w-full max-w-7xl mt-2">
         <div className="flex flex-row md:flex-row gap-4 md:gap-6 overflow-x-auto overflow-y-hidden md:overflow-visible px-1 md:px-0 hide-scrollbar md:justify-center items-center">
           <HeroFirmCardLeft firm={firms[0]} />

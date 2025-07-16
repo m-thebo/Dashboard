@@ -126,6 +126,17 @@
 }
 
 @layer utilities {
+  /* Hero top glow effect */
+  .hero-top-glow {
+    background: radial-gradient(
+      ellipse 800px 400px at 50% 0%,
+      rgba(1, 124, 255, 0.434) 0%,
+      rgba(0, 75, 172, 0.6) 30%,
+      rgba(0, 21, 255, 0.137) 50%,
+      transparent 70%
+    );
+    filter: blur(50px);
+  }
   /* Text Shadows */
   .text-shadow-white-sm {
     text-shadow: 0 0 1px rgba(255,255,255,0.5);
